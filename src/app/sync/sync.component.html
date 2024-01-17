@@ -1,0 +1,148 @@
+<div>
+  <mat-toolbar class="main__header">
+    <img src="assets/header_icon.png" class="img--header" />
+  </mat-toolbar>
+</div>
+
+<div class="main__container">
+  <div class="flex-w--100">
+    <h1>Auto Sync</h1>
+  </div>
+  <div class="flex-w--100">
+    <p>Effortlessly maintain synchronization with the Auto Sync feature.</p>
+  </div>
+  <div class="flex-w-100">
+    <mat-card>
+      <mat-card-content class="main__card">
+        <div class="subcard--one">
+          <div><img src="assets/logo.png" class="card__logo" /></div>
+          <div>
+            <div class="card__title"><h3>Madeira</h3></div>
+            <div>
+              <a href="https://www.visitmadeira.com/en/" class="card__link"
+                >https://www.visitmadeira.com/en/</a
+              >
+            </div>
+            <div class="card__description">
+              A privileged geographical position, a subtropical climate, unique
+              landscape settings and remarkable cultural traditions: discover
+              the charms of Madeira.
+            </div>
+          </div>
+
+          <div class="toggle__container">
+            <div>Enable Auto Sync</div>
+            <div>
+              <mat-slide-toggle
+                color="primary"
+                (change)="onToggle($event)"
+              ></mat-slide-toggle>
+            </div>
+          </div>
+        </div>
+
+        <div class="subcard--two" *ngIf="isAutosyncEnabled == true">
+          <div class="fre">
+            <mat-form-field color="primary" class="xyz">
+              <mat-label>Select Frequency</mat-label>
+              <mat-select [(value)]="selectedFrequency">
+                <mat-option value="daily">Daily</mat-option>
+                <mat-option value="weekly">Weekly</mat-option>
+                <mat-option value="monthly">Monthly</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="frequency_container">
+            <mat-form-field
+              *ngIf="selectedFrequency == 'weekly'"
+              color="primary"
+              class="displayed_frequency"
+            >
+              <mat-label>Select Weekday</mat-label>
+              <mat-select [(value)]="selectedDate" >
+                <mat-option value="1">Monday</mat-option>
+                <mat-option value="2">Tuesday</mat-option>
+                <mat-option value="3">Wednesday</mat-option>
+                <mat-option value="4">Thursday</mat-option>
+                <mat-option value="5">Friday</mat-option>
+                <mat-option value="6">Saturday</mat-option>
+                <mat-option value="7">Sunday</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field
+              *ngIf="selectedFrequency == 'monthly'"
+              color="primary"
+              class="displayed_frequency"
+            >
+              <mat-label>Select Day</mat-label>
+              <mat-select [(value)]="selectedDate">
+                <mat-option value="1">1st</mat-option>
+                <mat-option value="2">2nd</mat-option>
+                <mat-option value="3">3rd</mat-option>
+                <mat-option value="4">4th</mat-option>
+                <mat-option value="5">5th</mat-option>
+                <mat-option value="6">6th</mat-option>
+                <mat-option value="7">7th</mat-option>
+                <mat-option value="8">8th</mat-option>
+                <mat-option value="9">9th</mat-option>
+                <mat-option value="10">10th</mat-option>
+                <mat-option value="11">11th</mat-option>
+                <mat-option value="12">12th</mat-option>
+                <mat-option value="13">13th</mat-option>
+                <mat-option value="14">14th</mat-option>
+                <mat-option value="15">15th</mat-option>
+                <mat-option value="16">16th</mat-option>
+                <mat-option value="17">17th</mat-option>
+                <mat-option value="18">18th</mat-option>
+                <mat-option value="19">19th</mat-option>
+                <mat-option value="20">20th</mat-option>
+                <mat-option value="21">21st</mat-option>
+                <mat-option value="22">22nd</mat-option>
+                <mat-option value="23">23rd</mat-option>
+                <mat-option value="24">24th</mat-option>
+                <mat-option value="25">25th</mat-option>
+                <mat-option value="26">26th</mat-option>
+                <mat-option value="27">27th</mat-option>
+                <mat-option value="28">28th</mat-option>
+                <mat-option value="29">29th</mat-option>
+                <mat-option value="30">30th</mat-option>
+                <mat-option value="31">31st</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <div class="displayed_frequency">
+              <mat-form-field color="primary">
+                <mat-label>Select Time</mat-label>
+                <input
+                  matInput
+                  [ngxMatTimepicker]="picker"
+                  [format]="24"
+                  placeholder="12:00"
+                  [(ngModel)]="selectedTime"
+                  />
+                <ngx-mat-timepicker
+                  #defaultTime
+                  [defaultTime]="'12:00'"
+                  #picker
+                ></ngx-mat-timepicker>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div>
+            <button
+              mat-fab
+              extended
+              class="theme--color"
+              (click)="onStartAutoSync()"
+            >
+              Auto Sync
+            </button>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

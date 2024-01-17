@@ -1,0 +1,148 @@
+.main__header {
+  background-color: white;
+  box-shadow: 0.1px 0px 2px 0px black;
+}
+.main__header .img--header {
+  width: 10%;
+  margin: 0.3%;
+}
+
+.main__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 94%;
+  margin: 6%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.flex-w--100 {
+  display: flex;
+  width: 100%;
+}
+
+.main__card {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.card__description {
+  width: 70%;
+  margin-left: 2%;
+}
+
+.subcard--one {
+  display: flex;
+  width: 90%;
+  margin: 2%;
+}
+
+.subcard--two {
+  display: flex;
+  width: 100%;
+}
+
+.fre {
+  margin-left: 8%;
+}
+
+.frequency_container {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+}
+
+.toggle__container {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  width: 15%;
+  height: 100%;
+  margin-top: 2%;
+}
+
+.displayed_frequency {
+  margin-left: 2%;
+}
+
+.card__link {
+  text-decoration: none;
+  color: #d6430a;
+  margin-left: 2%;
+}
+
+.theme--color {
+  background-color: hsl(17, 91%, 44%);
+  color: white;
+}
+
+.ngx-picker-custom {
+  direction: ltr;
+}
+.ngx-picker-custom .timepicker__header {
+  background-color: red !important;
+}
+
+.card__logo {
+  margin-top: 2%;
+}
+
+.card__title {
+  margin: 2%;
+}
+
+/* media querys */
+@media screen and (max-width: 1400px) {
+  .main__container {
+    width: 88%;
+  }
+  .toggle__container {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .main__container {
+    width: 88%;
+  }
+  .toggle__container {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .main__container {
+    width: 88%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .main__container {
+    width: 88%;
+  }
+  .toggle__container {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .main__container {
+    width: 90%;
+  }
+  .img--header {
+    width: 14%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .main__container {
+    width: 88%;
+  }
+  .main__card {
+    height: 550px;
+    top: 0;
+  }
+  .img--header {
+    width: 20%;
+  }
+}/*# sourceMappingURL=sync.component.css.map */

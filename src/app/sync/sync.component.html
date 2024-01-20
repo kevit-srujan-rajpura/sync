@@ -5,19 +5,19 @@
 </div>
 
 <div class="main__container">
-  <div class="flex-w--100">
-    <h1>Auto Sync</h1>
+  <div class="content--title">
+    <p>Auto Sync</p>
   </div>
-  <div class="flex-w--100">
+  <div class="content--description">
     <p>Effortlessly maintain synchronization with the Auto Sync feature.</p>
   </div>
-  <div class="flex-w-100">
+  <div class="content--card">
     <mat-card>
       <mat-card-content class="main__card">
         <div class="subcard--one">
           <div><img src="assets/logo.png" class="card__logo" /></div>
           <div>
-            <div class="card__title"><h3>Madeira</h3></div>
+            <div class="card__title"><p>Madeira</p></div>
             <div>
               <a href="https://www.visitmadeira.com/en/" class="card__link"
                 >https://www.visitmadeira.com/en/</a
@@ -42,7 +42,7 @@
         </div>
 
         <div class="subcard--two" *ngIf="isAutosyncEnabled == true">
-          <div class="fre">
+          <div class="frequency__selection">
             <mat-form-field color="primary" class="xyz">
               <mat-label>Select Frequency</mat-label>
               <mat-select [(value)]="selectedFrequency">
@@ -57,10 +57,10 @@
             <mat-form-field
               *ngIf="selectedFrequency == 'weekly'"
               color="primary"
-              class="displayed_frequency"
+              class="selected_frequency--input"
             >
               <mat-label>Select Weekday</mat-label>
-              <mat-select [(value)]="selectedDate" >
+              <mat-select [(value)]="selectedDate">
                 <mat-option value="1">Monday</mat-option>
                 <mat-option value="2">Tuesday</mat-option>
                 <mat-option value="3">Wednesday</mat-option>
@@ -74,7 +74,7 @@
             <mat-form-field
               *ngIf="selectedFrequency == 'monthly'"
               color="primary"
-              class="displayed_frequency"
+              class="selected_frequency--input"
             >
               <mat-label>Select Day</mat-label>
               <mat-select [(value)]="selectedDate">
@@ -112,7 +112,7 @@
               </mat-select>
             </mat-form-field>
 
-            <div class="displayed_frequency">
+            <div class="selected_frequency--input">
               <mat-form-field color="primary">
                 <mat-label>Select Time</mat-label>
                 <input
@@ -121,7 +121,7 @@
                   [format]="24"
                   placeholder="12:00"
                   [(ngModel)]="selectedTime"
-                  />
+                />
                 <ngx-mat-timepicker
                   #defaultTime
                   [defaultTime]="'12:00'"
@@ -135,7 +135,7 @@
             <button
               mat-fab
               extended
-              class="theme--color"
+              class="btn--autosync"
               (click)="onStartAutoSync()"
             >
               Auto Sync

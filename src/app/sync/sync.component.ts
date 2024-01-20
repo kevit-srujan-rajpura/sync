@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-sync',
   templateUrl: './sync.component.html',
@@ -11,7 +13,7 @@ export class SyncComponent {
 
   selectedFrequency: string = 'daily';
   selectedDate: string = '1';
-  selectedTime: string = '1:00';
+  selectedTime: string = '12:00';
   isAutosyncEnabled: boolean = false;
 
   onToggle(event: any): void {
@@ -23,8 +25,10 @@ export class SyncComponent {
   }
 
   onStartAutoSync() {
+    //selectedTime is splitted for dividing it into two parameters of hour and minute.
     const [HOURS_OF_SELECTEDTIME, MINUTES_OF_SELECTEDTIME] =
       this.selectedTime.split(':');
+    //string values converted to number
     const HOURS = parseInt(HOURS_OF_SELECTEDTIME);
     const MINUTES = parseInt(MINUTES_OF_SELECTEDTIME);
     const DAY = parseInt(this.selectedDate);
@@ -38,7 +42,7 @@ export class SyncComponent {
       };
 
     if (this.selectedFrequency === 'daily') {
-      delete BODY.day;
+      delete BODY.day; //day field got deleted from BODY when daily frequency was selected
     }
 
     this.http
@@ -46,8 +50,25 @@ export class SyncComponent {
         'https://9z291t1z-8386.inc1.devtunnels.ms/app/scheduler/activateScheduler',
         BODY
       )
-      .subscribe((response) => {
-        alert(response);
-      });
+      .subscribe(
+        (res) => {
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Auto-Sync Started',
+            showConfirmButton: false,
+            timer: 1200,
+          });
+        },
+        (err) => {
+          Swal.fire({
+            position: 'top-end',
+            icon: 'error',
+            title: 'Auto-Sync Failed !!',
+            showConfirmButton: false,
+            timer: 1200,
+          });
+        }
+      );
   }
 }

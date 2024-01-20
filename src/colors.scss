@@ -1,20 +1,20 @@
 $black: #000000;
 $white: #ffffff;
-$custom-warn: #689F38;
-$custom-accent: #CDDC39;
+$custom-warn: #689f38;
+$custom-accent: #cddc39;
 $custom-primary: #d6430a;
 
 $custom-brand-warn: (
-  50: '#edf3e7',
-  100: '#d2e2c3',
-  200: '#b4cf9c',
-  300: '#95bc74',
-  400: '#7fad56',
+  50: "#edf3e7",
+  100: "#d2e2c3",
+  200: "#b4cf9c",
+  300: "#95bc74",
+  400: "#7fad56",
   500: $custom-warn,
-  600: '#609732',
-  700: '#558d2b',
-  800: '#4b8324',
-  900: '#3a7217',
+  600: "#609732",
+  700: "#558d2b",
+  800: "#4b8324",
+  900: "#3a7217",
   contrast: (
     50: $black,
     100: $black,
@@ -25,21 +25,21 @@ $custom-brand-warn: (
     600: $white,
     700: $white,
     800: $white,
-    900: $white
-  )
+    900: $white,
+  ),
 );
 
 $custom-brand-accent: (
-  50: '#f9fbe7',
-  100: '#f0f5c4',
-  200: '#e6ee9c',
-  300: '#dce774',
-  400: '#d5e157',
+  50: "#f9fbe7",
+  100: "#f0f5c4",
+  200: "#e6ee9c",
+  300: "#dce774",
+  400: "#d5e157",
   500: $custom-accent,
-  600: '#c8d833',
-  700: '#c1d32c',
-  800: '#bace24',
-  900: '#aec517',
+  600: "#c8d833",
+  700: "#c1d32c",
+  800: "#bace24",
+  900: "#aec517",
   contrast: (
     50: $black,
     100: $black,
@@ -50,8 +50,8 @@ $custom-brand-accent: (
     600: $white,
     700: $white,
     800: $white,
-    900: $white
-  )
+    900: $white,
+  ),
 );
 
 $custom-brand-primary: (
@@ -75,6 +75,6 @@ $custom-brand-primary: (
     600: $white,
     700: $white,
     800: $white,
-    900: $white
-  )
+    900: $white,
+  ),
 );
